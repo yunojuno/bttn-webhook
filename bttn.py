@@ -16,12 +16,6 @@ TWILIO_ACCOUNT_SID = getenv('TWILIO_ACCOUNT_SID')
 TWILIO_AUTH_TOKEN = getenv('TWILIO_AUTH_TOKEN')
 
 
-def validate_form(form, *keys):
-    """Validate that the request form contains all the required keys."""
-    for key in keys:
-        assert key in form, "Request form must include a '%s' key." % key
-
-
 @app.route('/', methods=['POST'])
 def bttn_pressed():
     """Respond to a bttn press event."""

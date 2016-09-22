@@ -2,21 +2,10 @@
 """Wrapper around the HipChat v2 API.
 
 This module contains a couple of generic functions for sending messages
-to rooms and users within HipChat. It also contains a python logging
-Handler, so that it can be used within logging to pipe warnings and
-errors into the Danger Zone room. (HIPCHAT_ERROR_ROOM)
+to rooms and users within HipChat.
 
 >>> hipchat.send_room_message('Lounge', 'This is a message')
 >>> hipchat.send_user_message('hugo', 'Hello, Hugo')
-
-Finally, there are some color-specific helpers to make general-purpose
-messaging easy - these will send messages to the room defined in settings
-as HIPCHAT_INFO_ROOM.
-
->>> hipchat.yellow('this is a yellow message')
-
-Messages are sent via RQ, using the settings.QUEUE_HIPCHAT value to determine
-whether to send them sync or async.
 
 Requires HIPCHAT_API_TOKEN to be set.
 
@@ -36,7 +25,6 @@ class HipChatError(Exception):
     """Custom error raised when communicating with HipChat API."""
 
     def __init__(self, status_code, error_message):
-        # super(HipChatError, self).__init__(message)
         self.status_code = status_code
         self.error_message = error_message
 
