@@ -37,7 +37,7 @@ the following data as form encoded variables:
 
 ```
 "channel" - must be "hipchat" for the default sample
-"room" - the name or id of the hipchat room to send the message to
+"recipient" - the room name / id for HipChat, channel for Slack, phone number for Twilio
 "message" - the message to send, which can include the expansion tags above
 ```
 
