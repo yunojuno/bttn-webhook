@@ -1,6 +1,11 @@
 {
   "name": "bttn HTTP webhook",
   "description": "A Flask app that can handle bttn press events.",
-  "repository": "https://github.com/yunojuno/bttn-flask",
-  "keywords": ["python", "flask", "bttn"]
+  "repository": "https://github.com/yunojuno/bttn-webhook",
+  "keywords": ["python", "flask", "bttn"],
+  "env": {
+    "HIPCHAT_API_TOKEN": {
+      "description": "HipChat API user token (from <your_subdomain>.hipchat.com/account/api)"
+    }
+  }
 }
